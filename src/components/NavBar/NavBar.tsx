@@ -1,5 +1,3 @@
-'use client';
-
 import * as React from 'react';
 import { SheetTrigger, SheetContent, Sheet } from '@/components/ui/sheet';
 
@@ -9,7 +7,6 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 
 import { Button } from '../ui/button';
@@ -21,19 +18,20 @@ export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-10">
-      <div>
-        <NavigationMenu className="flex  w-full max-w-[1300px] m-auto mt-2 justify-between px-4">
-          <div className="w-full flex items-center justify-between gap-4">
-            <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-              <div>{/* <Logo /> */}</div>
+      <div className="min-h-10">
+        <div>
+          <NavigationMenu className="flex  w-full max-w-[1300px] m-auto justify-between px-4">
+            <div className="w-full flex items-center justify-between gap-4">
+              <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen} >
+
               <SheetTrigger asChild className="md:hidden relative">
-                <Button className="lg:hidden" size="icon" variant="outline">
+                <Button className="lg:hidden" size="icon" variant="outline" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                   <MenuIcon className="h-6 w-6" />
                   <span className="sr-only">Toggle navigation menu</span>
                 </Button>
               </SheetTrigger>
               <SheetContent
+                forceMount
                 side="left"
                 onOpenAutoFocus={e => e.preventDefault()}
                 onCloseAutoFocus={e => e.preventDefault()}
@@ -76,62 +74,57 @@ export function Navbar() {
                 </div>
               </SheetContent>
             </Sheet>
-          </div>
+            </div>
 
-          <NavigationMenuList className="hidden md:flex">
-            <NavigationMenuItem>
-              <NavigationMenuLink
-                href="#"
-                className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-500 hover:via-red-500 hover:to-yellow-500 cursor-pointer`}
-              >
-                INÍCIO
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink
-                className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-purple-500 hover:via-red-500 hover:to-yellow-500 cursor-pointer`}
-              >
-                SOBRE
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <a href="#projects">
+            <NavigationMenuList className="hidden md:flex">
+              <NavigationMenuItem>
+
                 <NavigationMenuLink
-                  className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-purple-500 hover:via-red-500 hover:to-yellow-500`}
+                  href="#"
+                  className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-500 hover:via-red-500 hover:to-yellow-500 cursor-pointer`}
                 >
-                  PROJETOS
+                  INÍCIO
                 </NavigationMenuLink>
-              </a>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <a href="#technologies">
+              </NavigationMenuItem>
+              <NavigationMenuItem>
                 <NavigationMenuLink
-                  className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-purple-500 hover:via-red-500 hover:to-yellow-500`}
+                  className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-purple-500 hover:via-red-500 hover:to-yellow-500 cursor-pointer`}
                 >
-                  CONHECIMENTOS
+                  SOBRE
                 </NavigationMenuLink>
-              </a>
-            </NavigationMenuItem>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <a href="#contact">
-                <NavigationMenuLink
-                  className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-purple-500 hover:via-red-500 hover:to-yellow-500`}
-                >
-                  CONTATO
-                </NavigationMenuLink>
-              </a>
-            </NavigationMenuItem>
+                  <NavigationMenuLink
+                    className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-purple-500 hover:via-red-500 hover:to-yellow-500`}
+                  >
+                    PROJETOS
+                  </NavigationMenuLink>
 
-            <span className={cn('text-gray-500')}>|</span>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
 
-            <NavigationMenuItem>
-              {/* <SwitchThemeButton /> */}
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+                  <NavigationMenuLink
+                    className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-purple-500 hover:via-red-500 hover:to-yellow-500`}
+                  >
+                    CONHECIMENTOS
+                  </NavigationMenuLink>
+
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+
+                  <NavigationMenuLink
+                    className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-purple-500 hover:via-red-500 hover:to-yellow-500`}
+                  >
+                    CONTATO
+                  </NavigationMenuLink>
+
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
       </div>
-    </div>
   );
 }
 

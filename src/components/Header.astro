@@ -1,11 +1,12 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
 import { Navbar } from './NavBar/NavBar';
+import Container from '@/layouts/Container.astro';
 ---
 
-<header>
-  <div>
-    <Navbar />
-  </div>
+<header class="bg-blue-500">
+  <Container>
+    <Navbar client:load />
+  </Container>
+
+  <h1 class="bg-red-600">Tewhrjewhrjwher</h1>
 </header>

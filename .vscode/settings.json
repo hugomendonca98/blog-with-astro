@@ -1,10 +1,15 @@
 {
-  "files.associations": {
-    "*.css": "tailwindcss"
-  },
   "[astro]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "eslint.experimental.useFlatConfig": true,
   "eslint.validate": [
@@ -14,4 +19,5 @@
     "typescript", // Enable .ts
     "typescriptreact" // Enable .tsx
   ],
+  "css.lint.unknownAtRules": "ignore"
 }
