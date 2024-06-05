@@ -18,11 +18,11 @@ export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-      <div className="min-h-10">
-        <div>
-          <NavigationMenu className="flex  w-full max-w-[1300px] m-auto justify-between px-4">
-            <div className="w-full flex items-center justify-between gap-4">
-              <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen} >
+    <div className="min-h-10">
+      <div>
+        <NavigationMenu className="flex  w-full max-w-[1300px] m-auto justify-between px-4">
+          <div className="w-full flex items-center justify-between gap-4">
+            <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen} >
 
               <SheetTrigger asChild className="md:hidden relative">
                 <Button className="lg:hidden" size="icon" variant="outline" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -74,57 +74,57 @@ export function Navbar() {
                 </div>
               </SheetContent>
             </Sheet>
-            </div>
+          </div>
 
-            <NavigationMenuList className="hidden md:flex">
-              <NavigationMenuItem>
+          <NavigationMenuList className="hidden md:flex">
+            <NavigationMenuItem>
 
-                <NavigationMenuLink
-                  href="#"
-                  className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-500 hover:via-red-500 hover:to-yellow-500 cursor-pointer`}
-                >
-                  INÍCIO
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-purple-500 hover:via-red-500 hover:to-yellow-500 cursor-pointer`}
-                >
-                  SOBRE
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
+              <NavigationMenuLink
+                href="#"
+                className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-purple-500 hover:via-red-500 hover:to-yellow-500 cursor-pointer`}
+              >
+                INÍCIO
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink
+                className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-purple-500 hover:via-red-500 hover:to-yellow-500 cursor-pointer`}
+              >
+                SOBRE
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
 
-                  <NavigationMenuLink
-                    className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-purple-500 hover:via-red-500 hover:to-yellow-500`}
-                  >
-                    PROJETOS
-                  </NavigationMenuLink>
+              <NavigationMenuLink
+                className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-purple-500 hover:via-red-500 hover:to-yellow-500`}
+              >
+                PROJETOS
+              </NavigationMenuLink>
 
-              </NavigationMenuItem>
-              <NavigationMenuItem>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
 
-                  <NavigationMenuLink
-                    className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-purple-500 hover:via-red-500 hover:to-yellow-500`}
-                  >
-                    CONHECIMENTOS
-                  </NavigationMenuLink>
+              <NavigationMenuLink
+                className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-purple-500 hover:via-red-500 hover:to-yellow-500`}
+              >
+                CONHECIMENTOS
+              </NavigationMenuLink>
 
-              </NavigationMenuItem>
+            </NavigationMenuItem>
 
-              <NavigationMenuItem>
+            <NavigationMenuItem>
 
-                  <NavigationMenuLink
-                    className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-purple-500 hover:via-red-500 hover:to-yellow-500`}
-                  >
-                    CONTATO
-                  </NavigationMenuLink>
+              <NavigationMenuLink
+                className={`hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-purple-500 hover:via-red-500 hover:to-yellow-500`}
+              >
+                CONTATO
+              </NavigationMenuLink>
 
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
       </div>
+    </div>
   );
 }
 

@@ -80,3 +80,11 @@
   margin: 0;
   padding: 0;
 }
+
+.react-colorful__saturation {
+  display: none;
+}
+
+.react-colorful__last-control {
+  border-radius: 8px !important;
+}

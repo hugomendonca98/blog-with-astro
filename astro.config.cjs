@@ -8,6 +8,11 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://example.com',
+    vite: {
+    ssr: {
+      noExternal: ['react-color'],
+    },
+  },
   integrations: [
     mdx(),
     sitemap(),

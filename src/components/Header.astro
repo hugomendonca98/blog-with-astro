@@ -1,12 +1,12 @@
 ---
 import { Navbar } from './NavBar/NavBar';
 import Container from '@/layouts/Container.astro';
+import { ThemeColorSelect } from './ThemeColor';
 ---
 
-<header class="bg-blue-500">
+<header>
   <Container>
     <Navbar client:load />
   </Container>
-
-  <h1 class="bg-red-600">Tewhrjewhrjwher</h1>
+  <ThemeColorSelect client:load />
 </header>
