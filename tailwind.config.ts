@@ -1,7 +1,9 @@
+import { dynamicTwClasses } from "./src/lib/twPlugin";
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ['class'],
- content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   prefix: '',
   theme: {
     fontFamily: {
@@ -22,6 +24,7 @@ module.exports = {
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        teste: dynamicTwClasses("teste", 40),
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
