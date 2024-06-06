@@ -1,12 +1,17 @@
 ---
 import { Navbar } from './NavBar/NavBar';
 import Container from '@/layouts/Container.astro';
-import { ThemeColorSelect } from './ThemeColor';
+// import { ThemeColorSelect } from './ThemeColor';
+import { ThemePicker } from '@/components/ThemePicker/ThemePicker';
 ---
 
 <header>
   <Container>
     <Navbar client:load />
   </Container>
-  <ThemeColorSelect client:load />
+  <!-- <ThemeColorSelect client:load /> -->
+  <div>
+    <h1>Aqui vai o tema:</h1>
+    <ThemePicker client:only="react" />
+  </div>
 </header>
