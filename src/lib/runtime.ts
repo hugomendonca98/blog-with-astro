@@ -32,6 +32,7 @@ export function getVariables({
   ]);
 }
 
+
 export function updateVariables(variables: SingleVariable[], el?: HTMLElement) {
   const target = el ?? document.documentElement;
 

@@ -36,7 +36,7 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    --background: 240 10% 3.9%;
     --foreground: 210 40% 98%;
 
     --card: 222.2 84% 4.9%;
@@ -71,20 +71,16 @@
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
+  *::selection {
+    @apply bg-accent-400/30;
   }
+}
+
+html {
+  @apply text-foreground h-full;
 }
 
 * {
   margin: 0;
   padding: 0;
-}
-
-.react-colorful__saturation {
-  display: none;
-}
-
-.react-colorful__last-control {
-  border-radius: 8px !important;
 }

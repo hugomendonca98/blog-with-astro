@@ -3,3 +3,6 @@
 
 export const SITE_TITLE = '{ Hugo Mendonça }';
 export const SITE_DESCRIPTION = 'Welcome to my website!';
+
+export const THEME_HUE_DEFAULT_CORLOR = 195;
+export const THEME_DEFAULT_MODE = 'dark'
