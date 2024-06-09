@@ -20,8 +20,8 @@ export function Navbar() {
   return (
     <div className="min-h-10">
       <div>
-        <NavigationMenu className="flex  w-full max-w-[1300px] m-auto justify-between px-4">
-          <div className="w-full flex items-center justify-between gap-4">
+        <NavigationMenu className="flex  w-full max-w-[1300px] m-auto justify-center px-4 py-6 bg-cardBg rounded-b-2xl">
+          <div className="w-full flex md:hidden items-center justify-between gap-4 bg-red-300">
             <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen} >
 
               <SheetTrigger asChild className="md:hidden relative">
@@ -76,7 +76,7 @@ export function Navbar() {
             </Sheet>
           </div>
 
-          <NavigationMenuList className="hidden md:flex">
+          <NavigationMenuList className="hidden md:flex gap-4">
             <NavigationMenuItem>
 
               <NavigationMenuLink

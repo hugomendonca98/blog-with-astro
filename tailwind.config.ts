@@ -24,7 +24,8 @@ module.exports = {
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
-        //teste: dynamicTwClasses("teste", 40),
+        cardBg: 'var(--card-bg)',
+        pageBg: 'var(--page-bg)',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',

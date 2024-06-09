@@ -37,7 +37,6 @@
     "format": "prettier -w .",
     "lint:eslint": "eslint ."
   },
-  "type": "commonjs",
   "devDependencies": {
     "@eslint/js": "^9.4.0",
     "@types/culori": "^2.1.0",

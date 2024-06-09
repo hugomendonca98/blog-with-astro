@@ -8,6 +8,7 @@ import {
 } from "culori";
 
 import { makeVariable, shades } from "./common";
+import { THEME_HUE_DEFAULT_CORLOR } from "../consts";
 
 const toGamut = _toGamut as (...args: unknown[]) => (color: string) => Color;
 
@@ -66,6 +67,28 @@ export const highestChroma = (shadeIndex: number, hue: number) => {
     oklch(toGamut("p3", "oklch", differenceEuclidean("oklch"), 0)(color)),
   );
 };
+
+export const defineCustomVariables = (hue: number, darkMode: boolean): SingleVariable[] => {
+  // Define custom css variables
+  const cardBg = darkMode ? `oklch(.23 .015 ${hue})` : 'white';
+  const pageBg = darkMode ? `oklch(.16 .014 ${hue})` : `oklch(.95 .01 ${hue})`;
+  const hueVar = `${hue}`
+
+  return [['--card-bg', cardBg], ['--page-bg', pageBg], ['--hue', hueVar]]
+}
+
+export function getThemeData(hue: string, darkMode: boolean) {
+  let accent = getVariables({ baseName: 'accent', hue: +hue || THEME_HUE_DEFAULT_CORLOR });
+
+  const customVariables = defineCustomVariables(+hue, darkMode);
+
+  accent.push(...customVariables);
+
+  return {
+    className: darkMode ? 'dark' : '',
+    style: { ...Object.fromEntries(accent) },
+  };
+}
 
 export const consistentChroma = (i: number, hue: number) => {
   const oklch = converter("oklch");

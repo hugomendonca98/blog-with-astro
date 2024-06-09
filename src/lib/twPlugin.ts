@@ -1,16 +1,10 @@
 import { makeVariable, shades } from "./common";
-import { consistentChroma } from "./runtime";
+import { consistentChroma } from "./themeRuntime";
 
 export function dynamicTwClasses(baseName: string, baseHue: number) {
-
-
-  console.log('aqui dynamicTwClasses', baseName, baseHue)
   return Object.fromEntries(
     shades.map((shade, i) => {
       const color = consistentChroma(i, baseHue);
-
-      // console.log('aqui dynamicTwClasses', color, shade, i, baseHue, baseName)
-
       return [
         shade,
         `oklch(${makeVariable({

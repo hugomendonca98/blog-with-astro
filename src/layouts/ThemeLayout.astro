@@ -1,44 +1,33 @@
 ---
-import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-import { THEME_HUE_DEFAULT_CORLOR } from '../consts';
-import { getVariables } from '@/lib/runtime';
-import { Button } from '@/components/ui/button';
+import { DARK_MODE_COOKIE_NAME, HUE_COOKIE_NAME } from '../consts';
+import { getThemeData } from '@/lib/themeRuntime';
 
 type Props = {
   title: string;
   description: string;
 };
 
-const hue = Astro.cookies.get('theme-hue')?.value;
-const dark = Astro.cookies.get('darkMode')?.value === 'yes';
-
-export function getThemeData(hue: string, darkMode: boolean) {
-  const accent = getVariables({ baseName: 'accent', hue: +hue || THEME_HUE_DEFAULT_CORLOR });
-
-  return {
-    className: darkMode ? 'dark bg-black' : 'bg-white',
-    style: Object.fromEntries(accent),
-  };
-}
+const hue = Astro.cookies.get(HUE_COOKIE_NAME)?.value;
+const dark = Astro.cookies.get(DARK_MODE_COOKIE_NAME)?.value === 'yes';
 
 const { className, style } = getThemeData(hue!, dark);
 
 const { title, description } = Astro.props;
 ---
 
-<html lang="en" class={className} style={style}>
+<html lang="pt-BR" class={className} style={style}>
   <head>
     <BaseHead title={title} description={description} />
   </head>
 
-  <body class="bg-accent-400/10 h-full min-h-full">
-    <!-- <Header /> -->
+  <body class="bg-pageBg h-full min-h-full">
+    <Header />
     <main>
-      <p>
+      <p class="text-teste">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat consectetur illo, esse cumque distinctio,
         earum perferendis consequatur ipsam quo dolore dolores dicta iure adipisci! Saepe quam ipsum accusamus eaque
         fuga.
