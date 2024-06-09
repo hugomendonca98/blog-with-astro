@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { HexColorPicker, } from "react-colorful";
+import { HexColorPicker } from "react-colorful";
 
 export function ThemeColorSelect() {
   const [color, setColor] = useState("#aabbcc");

@@ -13,6 +13,7 @@ export default defineConfig({
       noExternal: ['react-color'],
     },
   },
+  output: 'server',
   integrations: [
     mdx(),
     sitemap(),

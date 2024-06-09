@@ -24,7 +24,7 @@ module.exports = {
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
-        teste: dynamicTwClasses("teste", 40),
+        //teste: dynamicTwClasses("teste", 40),
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
@@ -41,10 +41,11 @@ module.exports = {
           DEFAULT: 'hsl(var(--muted))',
           foreground: 'hsl(var(--muted-foreground))',
         },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
-        },
+        // accent: {
+        //   DEFAULT: 'hsl(var(--accent))',
+        //   foreground: 'hsl(var(--accent-foreground))',
+        // },
+        accent: dynamicTwClasses("accent", 40),
         popover: {
           DEFAULT: 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',

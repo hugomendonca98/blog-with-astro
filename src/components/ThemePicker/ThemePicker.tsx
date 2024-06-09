@@ -8,11 +8,13 @@ const darkModeCookie = "theme-dark-mode"
 
 function getHue() {
   // const { get } = useCookies()
+  console.log('aqui cookies', Cookies.get(hueCookie))
+
+
   return Cookies.get(hueCookie) ?? "40"
 }
 
 function getDarkMode() {
-  // const { get } = useCookies()
   return Cookies.get(darkModeCookie) ?? "no"
 }
 
@@ -35,19 +37,19 @@ export function getThemeData(hue: string, darkMode: boolean) {
 export function ThemePicker() {
   // const { cookies } = useCookies()
 
-  function updateTheme(form: FormData) {
-    Cookies.set(hueCookie, form.get("hue") as string, { maxAge: 1704085200 })
-    Cookies.set(darkModeCookie, form.get("force-dark") === "on" ? "yes" : "no", { maxAge: 1704085200 })
+  function updateTheme({ hue }: { hue: string }) {
+    // Cookies.set(hueCookie, form.get("hue") as string, { maxAge: 1704085200 })
+    // Cookies.set(darkModeCookie, form.get("force-dark") === "on" ? "yes" : "no", { maxAge: 1704085200 })
 
     // Astro doesn't have built-in revalidation, handle it on server if needed
+
+    // console.log('aqui anstes do cookies', hue)
+
+    // Cookies.set(hueCookie, hue as string, { maxAge: 1704085200 })
   }
 
-  const handleSubit = (e) => updateTheme(e.target)
-
   return (
-    //onSubmit={updateTheme}
-    //action={updateTheme}
-    <form className="md:col-span-2" onSubmit={handleSubit}>
+    <form className="md:col-span-2">
       <Suspense>
         <FormContent darkMode={getDarkMode() === "yes"} hue={getHue()} />
       </Suspense>
