@@ -1,9 +1,10 @@
-import { lazy } from "react";
+import { Suspense, lazy, useState } from "react";
 
 import { Field } from "./Field";
 import { Switch } from "./Switch";
 import { defineCustomVariables, getVariables, updateVariables } from "@/lib/themeRuntime";
 import { DARK_MODE_COOKIE_NAME, HUE_COOKIE_NAME } from "@/consts";
+import { PaletteIcon } from "lucide-react";
 
 const HuePicker = lazy(() => import('simple-hue-picker/react'));
 
@@ -14,6 +15,8 @@ export const FormContent = ({
   darkMode: boolean;
   hue: string;
 }) => {
+
+  const [currentHue, setCurrentHue] = useState(+hue)
 
   function getCookie(name: string) {
     const value = `; ${document.cookie}`;
@@ -41,6 +44,8 @@ export const FormContent = ({
     accent.push(...customVariables);
 
     updateVariables(accent);
+
+    setCurrentHue(hue)
   }
 
   function makeOnChange({ hue }: { hue: number }) {
@@ -48,26 +53,25 @@ export const FormContent = ({
   }
 
   return (
-    <div
-      className="grid grid-cols-1 gap-x-6 gap-y-8 sm:max-w-xl sm:grid-cols-6"
-    >
-      <div className="sm:col-span-3">
-        <Field id="hue" label="Favorite Color">
-          <div className="h-2">
+    <div className="w-full">
+      <div className="w-full">
+        <Field id="hue" label="Cor do tema" hue={currentHue}>
+          <div className="mb-4 flex gap-2 items-center">
+            <span className="font-semibold text-lg w-2 h-5 bg-accent-400 rounded"></span>
             <HuePicker name="hue" onChange={(e) => makeOnChange({ hue: e.detail as any })} value={hue} />
           </div>
         </Field>
       </div>
-      <div className="col-span-full">
+      {/* <div className="col-span-full">
         <Field id="dark-mode" label="Force dark mode">
-          {/* <Switch
+          <Switch
             defaultChecked={darkMode}
             label="Force dark mode"
             name="force-dark"
             onChange={onChangeDebounced}
-          /> */}
+          />
         </Field>
-      </div>
+      </div> */}
     </div>
   );
 };
