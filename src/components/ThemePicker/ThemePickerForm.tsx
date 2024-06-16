@@ -11,12 +11,14 @@ const HuePicker = lazy(() => import('simple-hue-picker/react'));
 export const FormContent = ({
   darkMode,
   hue,
+  setCurrentHue,
 }: {
   darkMode: boolean;
   hue: string;
+  setCurrentHue: (hue: string) => void
 }) => {
 
-  const [currentHue, setCurrentHue] = useState(+hue)
+
 
   function getCookie(name: string) {
     const value = `; ${document.cookie}`;
@@ -45,7 +47,7 @@ export const FormContent = ({
 
     updateVariables(accent);
 
-    setCurrentHue(hue)
+    setCurrentHue(String(hue))
   }
 
   function makeOnChange({ hue }: { hue: number }) {
@@ -55,10 +57,10 @@ export const FormContent = ({
   return (
     <div className="w-full">
       <div className="w-full">
-        <Field id="hue" label="Cor do tema" hue={currentHue}>
+        <Field id="hue" label="Cor do tema" hue={+hue}>
           <div className="mb-4 flex gap-2 items-center">
             <span className="font-semibold text-lg w-2 h-5 bg-accent-400 rounded"></span>
-            <HuePicker name="hue" onChange={(e) => makeOnChange({ hue: e.detail as any })} value={hue} />
+            <HuePicker name="hue" onChange={(e) => makeOnChange({ hue: e.detail as any })} value={hue} step={5} />
           </div>
         </Field>
       </div>

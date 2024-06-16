@@ -20,19 +20,24 @@ function getDarkMode() {
 }
 
 export function ThemePicker() {
-
-
+  const [currentHue, setCurrentHue] = useState(getHue())
 
   return (
     <form>
       <Popover>
         <PopoverTrigger>
-          <Button type='button' className='p-2 bg-accent-400/50'><PaletteIcon /></Button>
+          <Button type='button' className='p-2 bg-accent-400/50'>
+            <PaletteIcon />
+          </Button>
         </PopoverTrigger>
         <PopoverContent className='w-[300px] bg-cardBg'>
           <div className='w-full'>
             <Suspense>
-              <FormContent darkMode={getDarkMode() === "yes"} hue={getHue()} />
+              <FormContent
+                darkMode={getDarkMode() === "yes"}
+                hue={currentHue}
+                setCurrentHue={setCurrentHue}
+              />
             </Suspense>
           </div>
         </PopoverContent>

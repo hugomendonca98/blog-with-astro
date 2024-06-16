@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 
 import { DARK_MODE_COOKIE_NAME, HUE_COOKIE_NAME } from '../consts';
 import { getThemeData } from '@/lib/themeRuntime';
+import Container from './Container.astro';
 
 type Props = {
   title: string;
@@ -26,14 +27,12 @@ const { title, description } = Astro.props;
 
   <body class="bg-pageBg h-full min-h-full">
     <Header />
-    <main>
-      <p class="text-teste">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat consectetur illo, esse cumque distinctio,
-        earum perferendis consequatur ipsam quo dolore dolores dicta iure adipisci! Saepe quam ipsum accusamus eaque
-        fuga.
-      </p>
-      <slot />
-    </main>
-    <Footer />
+    <Container>
+      <main>
+        <slot />
+      </main>
+    </Container>
+
+    <!-- <Footer /> -->
   </body>
 </html>
