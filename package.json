@@ -1,6 +1,6 @@
 {
   "name": "blog-astro",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "@astrojs/check": "^0.7.0",
     "@astrojs/mdx": "^3.0.1",
