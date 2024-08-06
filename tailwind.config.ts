@@ -9,6 +9,7 @@ module.exports = {
     fontFamily: {
       sans: ['Roboto', 'sans-serif'],
       'roboto': ['Roboto', 'sans-serif'],
+      'pixelify': ['Pixelify Sans', 'sans-serif'],
     },
     container: {
       center: true,

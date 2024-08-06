@@ -13,9 +13,9 @@ type Props = {
 };
 
 const hue = Astro.cookies.get(HUE_COOKIE_NAME)?.value;
-const dark = Astro.cookies.get(DARK_MODE_COOKIE_NAME)?.value === 'yes';
+//const dark = Astro.cookies.get(DARK_MODE_COOKIE_NAME)?.value === 'yes';
 
-const { className, style } = getThemeData(hue!, dark);
+const { className, style } = getThemeData(hue!, true);
 
 const { title, description } = Astro.props;
 ---
@@ -26,13 +26,15 @@ const { title, description } = Astro.props;
   </head>
 
   <body class="bg-pageBg h-full min-h-full">
+    <!-- <div class="bg-[url('../bg-9.png')] bg-no-repeat bg-[length:100%_auto] bg-[center_-350px]"> -->
     <Header />
-    <Container>
-      <main>
-        <slot />
-      </main>
-    </Container>
+    <!-- <Container> -->
+    <main>
+      <slot />
+    </main>
+    <!-- </Container> -->
 
     <!-- <Footer /> -->
+    <!-- </div> -->
   </body>
 </html>

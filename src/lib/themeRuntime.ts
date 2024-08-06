@@ -78,9 +78,12 @@ export const defineCustomVariables = (hue: number, darkMode: boolean): SingleVar
 }
 
 export function getThemeData(hue: string, darkMode: boolean) {
-  let accent = getVariables({ baseName: 'accent', hue: +hue || THEME_HUE_DEFAULT_CORLOR });
 
-  const customVariables = defineCustomVariables(+hue, darkMode);
+  const definyHue = hue ? +hue : THEME_HUE_DEFAULT_CORLOR
+
+  let accent = getVariables({ baseName: 'accent', hue: definyHue });
+
+  const customVariables = defineCustomVariables(definyHue, darkMode);
 
   accent.push(...customVariables);
 

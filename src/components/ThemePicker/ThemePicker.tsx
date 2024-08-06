@@ -1,5 +1,6 @@
 import { Suspense, useState } from 'react'
 import { FormContent } from './ThemePickerForm'
+import { IoIosColorPalette } from "react-icons/io";
 import Cookies from 'js-cookie'
 import { DARK_MODE_COOKIE_NAME, HUE_COOKIE_NAME, THEME_HUE_DEFAULT_CORLOR } from '@/consts'
 import {
@@ -16,7 +17,7 @@ function getHue() {
 }
 
 function getDarkMode() {
-  return Cookies.get(DARK_MODE_COOKIE_NAME) ?? "no"
+  return Cookies.get(DARK_MODE_COOKIE_NAME) ?? "yes"
 }
 
 export function ThemePicker() {
@@ -26,8 +27,8 @@ export function ThemePicker() {
     <form>
       <Popover>
         <PopoverTrigger>
-          <Button type='button' className='p-2 bg-accent-400/50'>
-            <PaletteIcon />
+          <Button type='button' className='bg-transparent hover:bg-transparent p-0 py-0'>
+            <IoIosColorPalette className='w-7 h-7' />
           </Button>
         </PopoverTrigger>
         <PopoverContent className='w-[300px] bg-cardBg'>
