@@ -1,11 +1,12 @@
 ---
 title: 'Markdown Style Guide'
-description: 'Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.'
+description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla praesentium quo reprehenderit consequatur ab? Quidem nemo eveniet facere nobis excepturi eaque, incidunt veniam et, autem consequuntur laboriosam labore doloremque eius. Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis laborum commodi minima consectetur similique ut rerum officiis vero harum voluptatum vitae quod laudantium incidunt corporis, voluptatibus blanditiis pariatur! Dolor, reiciendis.'
 pubDate: 'Jul 01 2022'
 heroImage: '/blog-placeholder-1.jpg'
+tags: ['react', 'next', 'typescript']
 ---
 
-Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla praesentium quo reprehenderit consequatur ab? Quidem nemo eveniet facere nobis excepturi eaque, incidunt veniam et, autem consequuntur laboriosam labore doloremque eius. Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis laborum commodi minima consectetur similique ut rerum officiis vero harum voluptatum vitae quod laudantium incidunt corporis, voluptatibus blanditiis pariatur! Dolor, reiciendis.
 
 ## Headings
 
@@ -50,13 +51,13 @@ The blockquote element represents content that is quoted from another source, op
 #### Syntax
 
 ```markdown
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
+> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
 > **Note** that you can use _Markdown syntax_ within a blockquote.
 ```
 
 #### Output
 
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
+> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
 > **Note** that you can use _Markdown syntax_ within a blockquote.
 
 ### Blockquote with attribution
